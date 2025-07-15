@@ -10,6 +10,7 @@ require 'api/verificar_sessao.php';
     <title>Gestão de Custos de Obra</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 
@@ -149,5 +150,8 @@ require 'api/verificar_sessao.php';
     </div>
 
     <script src="script.js"></script>
+     <footer>
+            <p>&copy; 2025 Kavicki. Todos os direitos reservados.</p>
+        </footer>
 </body>
 </html>

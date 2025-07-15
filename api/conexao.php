@@ -1,4 +1,9 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 session_start(); // Inicia a sessão em todas as páginas
 $host = 'localhost'; // ou o host do seu servidor de DB
 $dbname = 'gestao_obras';

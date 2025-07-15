@@ -6,7 +6,9 @@ CREATE TABLE `materiais` (
   `preco_unitario` DECIMAL(10, 2) NOT NULL,
   `quantidade` DECIMAL(10, 2) NOT NULL,
   `status` VARCHAR(50) NOT NULL DEFAULT 'Pendente' COMMENT 'Pendente, Comprado, Usado',
-  `data_cadastro` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  `data_cadastro` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  `usuario_id` INT NOT NULL, -- Novo campo para associar ao usuário
+  FOREIGN KEY (`usuario_id`) REFERENCES `usuarios`(`id`) ON DELETE CASCADE
 );
 
 -- Tabela para armazenar os serviços de mão de obra
@@ -15,7 +17,9 @@ CREATE TABLE `mao_de_obra` (
   `descricao_servico` VARCHAR(255) NOT NULL,
   `custo` DECIMAL(10, 2) NOT NULL,
   `status` VARCHAR(50) NOT NULL DEFAULT 'Pendente' COMMENT 'Pendente, Aprovado, Pago',
-  `data_cadastro` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  `data_cadastro` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  `usuario_id` INT NOT NULL, -- Novo campo para associar ao usuário
+  FOREIGN KEY (`usuario_id`) REFERENCES `usuarios`(`id`) ON DELETE CASCADE
 );
 
 CREATE TABLE `usuarios` (
